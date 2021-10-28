@@ -1,0 +1,22 @@
+.button {
+  @include button-reset;
+
+  &--primary {
+    @include font-size (15px, 21px, 600);
+    background-color: $accent-color;
+    padding: 1em;
+    color: $basic-black;
+    border-radius: 6px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: fade($accent-color, 10);
+    }
+
+    &:focus {
+      color: rgba($basic-white, 0.3);
+    }
+  }
+}

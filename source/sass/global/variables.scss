@@ -1,0 +1,28 @@
+// Fonts
+$primary-text: "PTMono", "Arial", sans-serif;
+
+// Color
+$basic-blue: #00B2FF;
+$basic-dark: #666666;
+$basic-light-blue: #19baff;
+$basic-black100: #1b2d37;
+$basic-white: #ffffff;
+$basic-black: #000000;
+$basic-black-bg: #1b2d37;
+$basic-red: #f1463b;
+$transparent: rgba($basic-black, 0);
+
+$accent-color: $basic-blue;
+$invalid-color: $basic-red;
+$primary-text-color: $basic-dark;
+
+// Viewports
+$mobile-width: 767px;
+$tablet-width: 1023px;
+$desktop-width: 1024px;
+$tablet-width-only: 1023px;
+
+//Retina
+
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;

@@ -1,0 +1,15 @@
+.page-body {
+  font-size: 100%;
+  margin: 0;
+  min-width: 320px;
+  height: 100%;
+  color: $primary-text-color;
+  background-color: $basic-white;
+  font-family: $primary-text;
+}
+
+.page-body__wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}

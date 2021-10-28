@@ -1,0 +1,14 @@
+.container {
+  min-width: 1024px;
+  margin: 0 auto;
+  padding: 0 30px;
+
+  @include below($tablet-width) {
+    min-width: 768px;
+    padding: 0 30px;
+  }
+
+  @include below($mobile-width) {
+    min-width: 320px;
+  }
+}
