@@ -1,5 +1,134 @@
 .page-footer {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    bottom: 30px;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: $basic-grey100;
+    opacity: 0.2;
+  }
+
+  @include below ($tablet-width) {
+    &::before {
+      position: absolute;
+      top: 85px;
+      content: "";
+      width: 100%;
+      height: 1px;
+      background-color: $basic-grey100;
+      opacity: 0.2;
+    }
+  }
+
+  @include below ($mobile-width) {
+    &::before {
+      top: 200px;
+    }
+
+    &::after {
+      bottom: 110px;
+    }
+  }
+}
+
+.page-footer__top {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-template-areas: "";
+  grid-template-columns: minmax(200px, 300px) minmax(450px, 1fr) minmax(200px, 1fr);
+  width: 100%;
+  margin-bottom: 70px;
+
+  @include below ($tablet-width) {
+    grid-template-columns: repeat(2, 1fr);
+    padding-left: 25px;
+    padding-right: 25px;
+
+    p {
+      padding-top: 1em;
+    }
+  }
+
+  @include below ($mobile-width) {
+    grid-template-columns: 1fr;
+    margin-bottom: 20px;
+  }
+}
+
+.page-footer__logo {
+  grid-column: 1/2;
+  height: 52px;
+  grid-row: 1/2;
+
+  @include below ($mobile-width) {
+    margin-bottom: 80px;
+  }
+}
+
+.page-footer__links {
+  position: relative;
+
+  @include below ($tablet-width) {
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+
+  @include below ($mobile-width) {
+    flex-direction: column;
+  }
+}
+
+.page-footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  p {
+    @include font-size (0.81em, 1.8em, 400);
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  a {
+    color: $primary-text-color;
+    text-decoration: none;
+
+    &:hover {
+      color: $accent-color;
+    }
+
+    &:focus {
+      opacity: 0.5;
+    }
+  }
+
+  @include below ($mobile-width) {
+    flex-direction: column;
+
+    p {
+      margin-bottom: 20px;
+    };
+  }
+}
+
+.page-footer__bottom-copyright {
+  @include below ($tablet-width) {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    span {
+      display: none;
+    }
+  }
+
+  @include below ($mobile-width) {
+   top: 80px;
+  }
 }

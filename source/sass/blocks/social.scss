@@ -1,0 +1,27 @@
+.social {
+  @include list-reset;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  width: 112px;
+
+  @include below ($tablet-width) {
+    margin-top: 0;
+  }
+}
+
+.social__link {
+  svg {
+    color: $basic-grey;
+  }
+
+  &:hover svg {
+    color: $accent-color;
+  }
+
+  &:focus svg {
+    opacity: 0.5;
+  }
+}

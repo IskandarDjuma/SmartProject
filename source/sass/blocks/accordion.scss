@@ -1,0 +1,56 @@
+.accordion {
+  @include below ($mobile-width) {
+    &--nojs {
+      .accordion__content {
+        display: block;
+      }
+   }
+    &--active {
+      .accordion__content {
+        display: block;
+      }
+   }
+  }
+}
+
+.accordion__button {
+  @include font-size (0.94em, 1.06em, 400);
+  position: relative;
+  font-family: $secondary-text;
+  color: $basic-black100;
+  text-transform: uppercase;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 2em;
+  border: 0;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+
+  @include below ($mobile-width) {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 16px;
+      height: 16px;
+      display: block;
+      content: url("../img/plus.svg");
+    }
+
+    &--active::after {
+      top: -5px;
+      content: url("../img/minus.svg");
+    }
+  }
+}
+
+.accordion__content {
+  @include below ($mobile-width) {
+    display: none;
+  }
+}
+
+

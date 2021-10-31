@@ -1,7 +1,25 @@
 .page-header {
   min-height: 60px;
-  background-color: $basic-black100;
   color: $basic-white;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width:100%;
+    min-height: 878px;
+    top: 0;
+    right: 0;
+    background-color: $basic-black-bg;
+    background-image: url("../img/bg-desktop@1x.jpg");
+    background-size: cover, 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: -1;
+
+    @include retina () {
+      background-image: url("../img/bg-desktop@2x.jpg");
+    }
+  }
 }
 
 .page-header__wrapper {

@@ -1,0 +1,13 @@
+.decor-line {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    height: 1px;
+    width: 200vw;
+    background-color: $basic-grey100;
+  }
+}

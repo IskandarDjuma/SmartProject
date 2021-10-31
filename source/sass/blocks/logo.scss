@@ -1,4 +1,11 @@
-.logo__image {
-  width: 68px;
-  height: 20px;
+.logo {
+  img {
+    width: 68px;
+    height: 20px;
+  }
+
+  @include below ($mobile-width) {
+    width: 38px;
+    height: 38px;
+  }
 }
