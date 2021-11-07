@@ -2,16 +2,18 @@
 $primary-text: "PTMono", "Arial", sans-serif;
 $secondary-text: "Roboto Condensed", "Arial", sans-serif;
 // Color
-$basic-blue: #00B2FF;
+$basic-blue: #00b2ff;
 $basic-dark: #666666;
 $basic-light-blue: #19baff;
 $basic-black100: #1b2d37;
 $basic-white: #ffffff;
 $basic-grey: #cdcdcd;
 $basic-grey100: #626962;
+$basic-grey200: #ebebeb;
 $basic-black: #000000;
 $basic-black-bg: #1b2d37;
 $basic-red: #f1463b;
+$basic-blue-form: rgba(255, 255, 255, 0.2);
 $transparent: rgba($basic-black, 0);
 
 $accent-color: $basic-blue;
@@ -22,6 +24,7 @@ $primary-text-color: $basic-dark;
 $mobile-width: 767px;
 $tablet-width: 1023px;
 $desktop-width: 1024px;
+$desktop-width-max: 1600px;
 $tablet-width-only: 1023px;
 
 //Retina

@@ -2,10 +2,10 @@
   @include button-reset;
 
   &--primary {
-    @include font-size (15px, 21px, 600);
+    @include font-size (1em, 1.18em, 700);
     background-color: $accent-color;
     padding: 1em;
-    color: $basic-black;
+    color: $basic-white;
     border-radius: 6px;
     width: 100%;
     align-items: center;

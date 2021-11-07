@@ -1,0 +1,28 @@
+.feedback {
+  background-color: $accent-color;
+  padding-bottom: 114px;
+}
+
+.feedback__wrap {
+  max-width: 1170px;
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  align-items: center;
+
+  @include below ($tablet-width) {
+    grid-template-columns: 5fr;
+  }
+}
+
+.feedback__image {
+  background-image: url("../img/paper-airplane@1x.png");
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 400px;
+  height: 288px;
+
+  @include below ($tablet-width) {
+    display: none;
+  }
+}

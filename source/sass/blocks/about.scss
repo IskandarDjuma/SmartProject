@@ -1,0 +1,67 @@
+.about {
+  margin-bottom: 110px;
+}
+
+.about__wrap {
+  max-width: 1170px;
+  position: relative;
+  padding-left: 180px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 29px;
+    left: 0;
+    width: 220px;
+    height: 317px;
+    background-image: url("../img/year-img@1x.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  h2 {
+    @include font-size (2.25em, 1.38em, 400);
+    font-family: $secondary-text;
+    margin: 0;
+    margin-bottom: 0.5em;
+  }
+
+  p {
+    margin: 0;
+    padding-bottom: 2em;
+  }
+
+  a {
+    @include font-size (0.87em, 1em, 400);
+    color: $accent-color;
+    font-family: $secondary-text;
+    text-transform: uppercase;
+    border: 2px solid $accent-color;
+    padding: 1em;
+    border-radius: 5px;
+    width: 180px;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: $accent-color;
+      transition: background-color 0.3 ease-in-out;
+      color: $basic-white;
+    }
+  }
+
+  @include below ($tablet-width) {
+    &::before {
+      width: 251px;
+      height: 362px;
+    }
+  }
+
+  @include below ($mobile-width) {
+    padding-left: 30px;
+
+    &::before {
+      display: none;
+    }
+  }
+}

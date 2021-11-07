@@ -1,11 +1,11 @@
 .logo {
   img {
-    width: 68px;
-    height: 20px;
-  }
+    width: 202px;
+    height: 52px;
 
-  @include below ($mobile-width) {
-    width: 38px;
-    height: 38px;
+    @include below ($mobile-width) {
+      width: 38px;
+      height: 38px;
+    }
   }
 }

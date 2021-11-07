@@ -27,30 +27,31 @@
   vertical-align: middle;
 }
 
-.main-nav__link {
-  &--mail {
-    svg {
-      width: 19px;
-      height: 14px;
+.main-nav__link--mail {
+  svg {
+    width: 19px;
+    height: 14px;
 
-      @include below ($tablet-width) {
-        width: 25px;
-        height: 18px;
-      }
-    }
-  }
-  &--phone {
-    svg {
-      width: 18px;
+    @include below ($tablet-width) {
+      width: 25px;
       height: 18px;
-
-      @include below ($tablet-width) {
-        width: 24px;
-        height: 24px;
-      }
     }
   }
+}
 
+.main-nav__link--phone {
+  svg {
+    width: 18px;
+    height: 18px;
+
+    @include below ($tablet-width) {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.main-nav__link {
   @include below ($tablet-width) {
     font-size: 0;
     text-align: center;
@@ -58,9 +59,24 @@
 }
 
 .main-nav__button {
+  @include font-size (14px, 16px, 700);
   text-transform: uppercase;
   border: 1px solid $basic-white;
   border-radius: 5px;
+  color: $basic-white;
+  outline: none;
+  padding: 1em;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $accent-color;
+    border: none;
+  }
+
+  &:focus {
+    opacity: 0.5;
+  }
 
   @include below ($tablet-width) {
     display: none;

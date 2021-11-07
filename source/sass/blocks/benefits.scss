@@ -1,0 +1,82 @@
+.benefits {
+  margin-top: 30px;
+
+  @include below ($tablet-width) {
+    margin-top: 185px;
+  }
+
+  @include below ($mobile-width) {
+    margin-top: 220px;
+  }
+}
+
+.benefits__wrap {
+  max-width: 1170px;
+}
+
+.benefits__list {
+  @include list-reset;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.benefits__item {
+  position: relative;
+  padding: 40px 45px;
+  max-width: 570px;
+  width: 48%;
+  min-height: 299px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border: 1px solid $basic-grey200;
+  cursor: pointer;
+
+  &:nth-child(2n) {
+    margin-right: 0;
+  }
+
+  svg {
+    color: $accent-color;
+  }
+
+  h3 {
+    @include font-size (1.5em, 1.4em, 400);
+    font-family: $secondary-text;
+    color: $accent-color;
+    margin: 0;
+    padding-bottom: 0.62em;
+    padding-top: 1em;
+  }
+
+  p {
+    margin: 0;
+    color: $primary-text-color;
+  }
+
+  &:hover {
+    background-color: $accent-color;
+    transition: background-color 0.3s ease-in-out;
+
+    svg,
+    h3,
+    p {
+      color: $basic-white;
+    }
+  }
+
+  @include below ($tablet-width) {
+    flex: 1 1 auto;
+  }
+
+  @include below ($mobile-width) {
+    max-width: 100%;
+    width: 100%;
+    margin-right: 0;
+    padding: 20px 25px;
+
+    h3 {
+      @include font-size (1.25em, 1em, 400);
+    }
+  }
+}

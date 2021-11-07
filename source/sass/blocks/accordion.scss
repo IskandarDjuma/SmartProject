@@ -1,15 +1,16 @@
-.accordion {
+.accordion--nojs {
   @include below ($mobile-width) {
-    &--nojs {
-      .accordion__content {
-        display: block;
-      }
-   }
-    &--active {
-      .accordion__content {
-        display: block;
-      }
-   }
+    .accordion__content {
+      display: block;
+    }
+  }
+}
+
+.accordion--active {
+  @include below ($mobile-width) {
+    .accordion__content {
+      display: block;
+    }
   }
 }
 
@@ -30,20 +31,21 @@
 
   @include below ($mobile-width) {
     &::after {
-      content: "";
+      content: url("../img/plus.svg");
       position: absolute;
       top: 0;
       right: 0;
       width: 16px;
       height: 16px;
       display: block;
-      content: url("../img/plus.svg");
     }
+  }
+}
 
-    &--active::after {
-      top: -5px;
-      content: url("../img/minus.svg");
-    }
+.accordion__button--active::after {
+  @include below ($mobile-width) {
+    top: -5px;
+    content: url("../img/minus.svg");
   }
 }
 
@@ -52,5 +54,3 @@
     display: none;
   }
 }
-
-
