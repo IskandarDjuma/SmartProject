@@ -1,5 +1,6 @@
 .benefits {
-  margin-top: 30px;
+  margin-top: 100px;
+  margin-bottom: 75px;
 
   @include below ($tablet-width) {
     margin-top: 185px;
@@ -11,7 +12,7 @@
 }
 
 .benefits__wrap {
-  max-width: 1170px;
+  max-width: 1230px;
 }
 
 .benefits__list {
@@ -23,14 +24,24 @@
 
 .benefits__item {
   position: relative;
-  padding: 40px 45px;
-  max-width: 570px;
-  width: 48%;
+  padding: 40px 44px;
+  max-width: 571px;
+  width: 50%;
   min-height: 299px;
   margin-right: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   border: 1px solid $basic-grey200;
   cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    min-height: 100%;
+    background-color: $accent-color;
+  }
 
   &:nth-child(2n) {
     margin-right: 0;
@@ -45,8 +56,8 @@
     font-family: $secondary-text;
     color: $accent-color;
     margin: 0;
-    padding-bottom: 0.62em;
-    padding-top: 1em;
+    padding-bottom: 20px;
+    padding-top: 14px;
   }
 
   p {

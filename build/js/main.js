@@ -2,60 +2,39 @@
 
 (function () {
 
-  var accordion = document.querySelectorAll('.accordion');
-  var accordionButton = document.querySelectorAll('.accordion__button');
-  var accordionNojs = document.querySelectorAll('.accordion--nojs');
+  var accordions = document.querySelectorAll('.accordion');
+  var accordionButtons = document.querySelectorAll('.accordion__button');
+  var accordionsNojs = document.querySelectorAll('.accordion--nojs');
 
-  if (accordionNojs) {
-    accordionNojs.forEach(function (item) {
+  if (accordionsNojs) {
+    accordionsNojs.forEach(function (item) {
       item.classList.remove('accordion--nojs');
     });
   }
 
-  if (accordionButton) {
-    accordionButton.forEach(function (item) {
+  if (accordionButtons) {
+    accordionButtons.forEach(function (item) {
       item.addEventListener('click', function (evt) {
         var parent = item.parentNode;
-
+        var activeButton = document.querySelector('.accordion__button--active');
         var button = evt.target;
+
+        if (activeButton) {
+          activeButton.classList.remove('accordion__button--active');
+        }
         button.classList.toggle('accordion__button--active');
 
         if (parent.classList.contains('accordion--active')) {
           parent.classList.remove('accordion--active');
+          button.classList.remove('accordion__button--active');
         } else {
-          accordion.forEach(function (child) {
-            child.classList.remove('accordion--active');
-          });
+          for (var j = 0; j < accordions.length; j++) {
+            accordions[j].classList.remove('accordion--active');
+          }
           parent.classList.add('accordion--active');
         }
       });
     });
-  }
-
-  var phoneInputs = document.querySelectorAll('input[data-tel-input]');
-
-  var setMask = function (input) {
-    input.addEventListener('focus', function (evt) {
-      if (!input.value && evt.key !== 'Backspace') {
-        input.value = '+7(';
-      } else {
-        return;
-      }
-    });
-
-    input.addEventListener('keydown', function (evt) {
-      var numberLength = input.value.length;
-
-      if (numberLength === 6 && evt.key !== 'Backspace') {
-        input.value = input.value + ')';
-      }
-    });
-  };
-
-  if (phoneInputs) {
-    for (var i = 0; i < phoneInputs.length; i++) {
-      setMask(phoneInputs[i]);
-    }
   }
 
   var modalLink = document.querySelector('.main-nav__button');
@@ -119,55 +98,59 @@
 })();
 
 
-// var phoneInputs = document.querySelectorAll('input[data-tel-input]');
+var phoneInputs = document.querySelectorAll('input[data-tel-input]');
 
-// var getInputNumbersValue = function (input) {
-//   return input.value.replace(/\D/g, '');
-// };
+var getInputNumbersValue = function (input) {
+  return input.value.replace(/\D/g, '');
+};
 
-// var onPhoneInput = function (e) {
-//   var input = e.target;
-//   var inputNumbersValue = getInputNumbersValue(input);
-//   var formattedInputValue = '';
+var onPhoneInput = function (e) {
+  var input = e.target;
+  var inputNumbersValue = getInputNumbersValue(input);
+  var formattedInputValue = '';
 
-//   if (!inputNumbersValue) {
-//     input.value = '';
-//     return;
-//   }
+  if (!inputNumbersValue) {
+    input.value = '';
+    return;
+  }
 
-//   if (['7', '8', '9'].indexOf(inputNumbersValue[0]) > -1) {
-//     // russian phone number
-//     if (inputNumbersValue[0] === '9') inputNumbersValue = '7' + inputNumbersValue;
-//     var firstSymbols = (inputNumbersValue[0] === '8') ? '8' : '+7';
-//     formattedInputValue = firstSymbols + ' ';
-//     if (inputNumbersValue.length > 1) {
-//       formattedInputValue += '(' + inputNumbersValue.substring(1, 4);
-//     }
-//     if (inputNumbersValue.length >= 5) {
-//       formattedInputValue += ') ' + inputNumbersValue.substring(4, 7);
-//     }
-//     if (inputNumbersValue.length >= 8) {
-//       formattedInputValue += '-' + inputNumbersValue.substring(7, 9);
-//     }
-//     if (inputNumbersValue.length >= 10) {
-//       formattedInputValue += '-' + inputNumbersValue.substring(9, 11);
-//     }
-//   } else {
-//     // not russian
-//     formattedInputValue = '+7' + inputNumbersValue.substring(0, 10);
-//   }
-//   input.value = formattedInputValue;
-// };
+  if (['7', '8', '9'].indexOf(inputNumbersValue[0]) > -1) {
+    if (inputNumbersValue[0] === '9') {
+      inputNumbersValue = '7' + inputNumbersValue;
+    }
+    var firstSymbols = (inputNumbersValue[0] === '8') ? '8' : '+7';
+    formattedInputValue = firstSymbols + ' ';
+    if (inputNumbersValue.length > 1) {
+      formattedInputValue += '(' + inputNumbersValue.substring(1, 4);
+    }
+    if (inputNumbersValue.length >= 5) {
+      formattedInputValue += ') ' + inputNumbersValue.substring(4, 7);
+    }
+    if (inputNumbersValue.length >= 8) {
+      formattedInputValue += '-' + inputNumbersValue.substring(7, 9);
+    }
+    if (inputNumbersValue.length >= 10) {
+      formattedInputValue += '-' + inputNumbersValue.substring(9, 11);
+    }
+  } else {
+    // not russian
+    formattedInputValue = '+7' + inputNumbersValue.substring(0, 10);
+  }
+  input.value = formattedInputValue;
+};
 
-// var onPhoneKeyDown = function (e) {
-//   var input = e.target;
-//   if (e.keyCode === 8 && getInputNumbersValue(input).length === 1) {
-//     input.value = '';
-//   }
-// };
+var onPhoneKeyDown = function (e) {
+  var input = e.target;
+  if (e.keyCode === 8 && getInputNumbersValue(input).length === 1) {
+    input.value = '';
+  }
+};
 
-// for (var i = 0; i < phoneInputs.length; i++) {
-//   var input = phoneInputs[i];
-//   input.addEventListener('input', onPhoneInput);
-//   input.addEventListener('keydown', onPhoneKeyDown);
-// }
+for (var i = 0; i < phoneInputs.length; i++) {
+  var input = phoneInputs[i];
+  input.addEventListener('focus', function (evt) {
+    evt.target.value = '+7 (';
+  });
+  input.addEventListener('input', onPhoneInput);
+  input.addEventListener('keydown', onPhoneKeyDown);
+}

@@ -22,14 +22,16 @@
 
 .promo__wrap {
   position: relative;
+  margin-top: -86px;
 
   h2 {
-    @include font-size (5em, 1.75em, 700);
+    @include font-size (5em, 1.2em, 700);
     font-family: $secondary-text;
     color: $basic-white;
     text-transform: uppercase;
     margin: 0;
     margin-bottom: 0.37em;
+    letter-spacing: 0.07em;
   }
 
   p {
@@ -39,13 +41,13 @@
     margin: 0;
     padding: 0;
     margin-bottom: 1.95em;
-    padding-left: 5em;
-
+    padding-left: 4.5em;
+    width: 90%;
 
     &::before {
       content: "";
       position: absolute;
-      top: 18px;
+      top: 15px;
       left: 0;
       height: 2px;
       width: 66px;
@@ -74,7 +76,7 @@
 }
 
 .promo__button {
-  margin-left: 5em;
+  margin-left: 6em;
   max-width: 400px;
   font-family: $secondary-text;
   text-transform: uppercase;
@@ -118,20 +120,20 @@
 
   img {
     position: absolute;
-    left: -15%;
-    top: 20%;
+    left: -8%;
+    top: 2%;
     right: auto;
     bottom: auto;
     width: auto;
-    margin-top: -124px;
+    margin-top: -241px;
     object-fit: cover;
   }
 
   &::before {
     content: "";
     position: absolute;
-    top: -310px;
-    left: -20%;
+    top: -381px;
+    left: -15%;
     z-index: -1;
     width: 670px;
     height: 641px;

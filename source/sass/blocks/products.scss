@@ -3,7 +3,7 @@
 }
 
 .products__wrap {
-  max-width: 1170px;
+  max-width: 1230px;
 
   h2 {
     @include font-size (2.25em, 1.38em, 400);
@@ -21,7 +21,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
-  padding-bottom: 127px;
+  padding-bottom: 110px;
 
   @include below ($tablet-width) {
     grid-template-columns: 1fr;

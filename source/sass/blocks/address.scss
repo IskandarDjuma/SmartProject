@@ -33,10 +33,6 @@
 .address__item {
   padding-bottom: 10px;
 
-  &:last-child {
-    padding-bottom: 0;
-  }
-
   address,
   a {
     @include font-size (0.94em, 1.06em, 400);

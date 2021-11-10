@@ -10,8 +10,8 @@
   &::before {
     content: "";
     position: absolute;
-    top: 29px;
-    left: 0;
+    top: 0;
+    left: -33px;
     width: 220px;
     height: 317px;
     background-image: url("../img/year-img@1x.png");
@@ -23,12 +23,12 @@
     @include font-size (2.25em, 1.38em, 400);
     font-family: $secondary-text;
     margin: 0;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.8em;
   }
 
   p {
     margin: 0;
-    padding-bottom: 2em;
+    padding-bottom: 25px;
   }
 
   a {
@@ -42,6 +42,7 @@
     width: 180px;
     align-items: center;
     justify-content: center;
+    margin-top: 25px;
 
     &:hover {
       background-color: $accent-color;
