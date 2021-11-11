@@ -1,26 +1,49 @@
 .feedback {
   background-color: $accent-color;
-  padding-bottom: 114px;
+  padding-bottom: 86px;
+
+  @include below ($tablet-width) {
+    padding-bottom: 103px;
+  }
 }
 
 .feedback__wrap {
-  max-width: 1170px;
+  max-width: 1230px;
   display: grid;
   grid-template-columns: 5fr 7fr;
-  align-items: center;
 
   @include below ($tablet-width) {
     grid-template-columns: 5fr;
+    padding-right: 86px;
+  }
+
+  @include below ($mobile-width) {
+    padding-right: 0;
   }
 }
 
 .feedback__image {
+  position: relative;
   background-image: url("../img/paper-airplane@1x.png");
-  background-position: left center;
+  background-position: 50%;
   background-repeat: no-repeat;
   background-size: contain;
-  width: 400px;
-  height: 288px;
+  width: 490px;
+  height: 585px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -60px;
+    left: -234px;
+    width: 670px;
+    height: 641px;
+    background-image: url("../img/triangles.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 35px 0;
+  }
+
 
   @include below ($tablet-width) {
     display: none;

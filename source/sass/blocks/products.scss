@@ -12,7 +12,21 @@
     margin: 0;
     margin-bottom: 0.5em;
     padding-top: 90px;
-    padding-bottom: 47px;
+    padding-bottom: 33px;
+  }
+
+  @include below ($tablet-width) {
+    h2 {
+      @include font-size (2em, 1.38em, 400);
+      padding-top: 50px;
+    }
+  }
+
+  @include below ($mobile-width) {
+    h2 {
+      @include font-size (1.75em, 1.38em, 400);
+      padding-left: 10px;
+    }
   }
 }
 
@@ -21,15 +35,17 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
-  padding-bottom: 110px;
+  padding-bottom: 123px;
 
   @include below ($tablet-width) {
     grid-template-columns: 1fr;
     gap: 46px;
+    padding-bottom: 67px;
   }
 
   @include below ($mobile-width) {
     gap: 30px;
+    padding-bottom: 48px;
   }
 }
 
@@ -77,12 +93,18 @@
     color: $basic-white;
     position: absolute;
     top: 0;
-    padding-top: 2em;
-    padding-left: 2em;
-    width: 50%;
+    padding-top: 51px;
+    padding-left: 43px;
+    width: 55%;
   }
 
   @include below ($tablet-width) {
+    figcaption {
+      width: 30%;
+      padding-top: 41px;
+      padding-left: 45px;
+    }
+
     figure {
       max-width: none;
     }
@@ -94,6 +116,12 @@
   }
 
   @include below ($mobile-width) {
+    figcaption {
+      padding-top: 19px;
+      padding-left: 35px;
+      width: 65%;
+    }
+
     img {
       max-height: 290px;
     }

@@ -1,4 +1,6 @@
 .address {
+  padding-left: 22px;
+
   h3 {
     @include font-size (0.94em, 1.06em, 400);
     font-family: $secondary-text;
@@ -11,6 +13,7 @@
 
   @include below ($tablet-width) {
     grid-row: 2/3;
+    padding-left: 15px;
   }
 
   @include below ($mobile-width) {
@@ -31,7 +34,8 @@
 }
 
 .address__item {
-  padding-bottom: 10px;
+  padding-bottom: 7px;
+  padding-left: 8px;
 
   address,
   a {
@@ -46,5 +50,10 @@
     &:focus {
       opacity: 0.5;
     }
+  }
+
+  @include below ($tablet-width) {
+    padding-left: 0;
+    padding-bottom: 8px;
   }
 }

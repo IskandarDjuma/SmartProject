@@ -20,6 +20,18 @@
       background-image: url("../img/bg-desktop@2x.jpg");
     }
   }
+
+  @include below ($tablet-width) {
+    &::before {
+      min-height: 687px;
+    }
+  }
+
+  @include below ($mobile-width) {
+    &::before {
+      min-height: 649px;
+    }
+  }
 }
 
 .page-header__wrapper {
@@ -36,5 +48,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 25px;
+  padding-top: 23px;
+
+  @include below ($tablet-width) {
+    padding-top: 8px;
+  }
 }

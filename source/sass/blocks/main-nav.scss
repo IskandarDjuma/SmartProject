@@ -17,10 +17,15 @@
 
 .main-nav__item {
   padding-top: 20px;
+
   a {
     color: $basic-white;
     text-decoration: none;
-    padding: 13px 12px;
+    padding: 13px 20px;
+
+    @include below ($tablet-width) {
+      padding: 0;
+    }
   }
 }
 
@@ -61,7 +66,7 @@
   }
 
   &:hover svg {
-    color: $basic-white;;
+    color: $basic-white;
   }
 
   &:focus svg {
@@ -75,13 +80,13 @@
 }
 
 .main-nav__button {
-  @include font-size (14px, 16px, 700);
+  @include font-size (14px, 12px, 700);
   text-transform: uppercase;
   border: 1px solid $basic-white;
   border-radius: 5px;
   color: $basic-white;
   outline: none;
-  padding: 1em;
+  padding: 15px 18px;
   background-color: transparent;
   cursor: pointer;
 

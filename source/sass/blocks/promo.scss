@@ -1,7 +1,6 @@
 .promo {
   min-height: 793px;
   display: grid;
-  align-items: center;
   grid-auto-columns: 1fr;
   grid-column-gap: 16px;
   grid-row-gap: 16px;
@@ -11,18 +10,19 @@
 
   @include below ($tablet-width) {
     overflow: hidden;
-    min-height: 670px;
+    min-height: 472px;
+    grid-template-columns: 3fr 1fr;
   }
 
   @include below ($mobile-width) {
-    min-height: 647px;
+    min-height: 614px;
     grid-template-columns: 5fr;
   }
 }
 
 .promo__wrap {
   position: relative;
-  margin-top: -86px;
+  margin-top: 217px;
 
   h2 {
     @include font-size (5em, 1.2em, 700);
@@ -30,7 +30,7 @@
     color: $basic-white;
     text-transform: uppercase;
     margin: 0;
-    margin-bottom: 0.37em;
+    margin-bottom: 0.3em;
     letter-spacing: 0.07em;
   }
 
@@ -47,7 +47,7 @@
     &::before {
       content: "";
       position: absolute;
-      top: 15px;
+      top: 18px;
       left: 0;
       height: 2px;
       width: 66px;
@@ -56,13 +56,19 @@
   }
 
   @include below ($tablet-width) {
+    margin-top: 104px;
+    padding-left: 63px;
+
     h2 {
       @include font-size (3.75em, 1.16em, 700);
+      margin-bottom: 0.5em;
     }
 
     p {
       @include font-size (1.12em, 1.5em, 400);
       padding: 0 3em;
+      width: 100%;
+      margin-bottom: 2.95em;
     }
 
     p::before {
@@ -72,6 +78,23 @@
 
   @include below ($mobile-width) {
     order: 2;
+    padding-left: 0;
+    margin-top: 109px;
+
+    h2 {
+      @include font-size (2.5em, 1.16em, 700);
+    }
+
+    p {
+      @include font-size (1em, 1.6em, 700);
+      padding: 0;
+      padding-left: 51px;
+      padding-top: 10px;
+    }
+
+    p::before {
+      top: 24px;
+    }
   }
 }
 
@@ -117,6 +140,7 @@
 
 .promo__image {
   position: relative;
+  margin-top: 400px;
 
   img {
     position: absolute;
@@ -150,16 +174,20 @@
   }
 
   @include below ($tablet-width) {
+    margin-top: 0;
+
     img {
       width: 465px;
       height: 340px;
       max-width: 465px;
-      left: 37%;
+      left: -35%;
+      top: 274px;
     }
 
     &::before {
       width: 520px;
-      left: 0;
+      top: -120px;
+      left: -164px;
     }
   }
 
@@ -168,12 +196,14 @@
       width: 300px;
       height: 220px;
       max-width: 300px;
-      top: 100px;
+      top: 265px;
+      left: 3%;
     }
 
     &::before {
-      top: -190px;
-      left: 50%;
+      top: -115px;
+      left: 35%;
+      width: 508px;
     }
   }
 }

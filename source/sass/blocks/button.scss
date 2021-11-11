@@ -2,7 +2,7 @@
   @include button-reset;
 
   &--primary {
-    @include font-size (1em, 1.18em, 700);
+    @include font-size (1em, 1.68em, 700);
     background-color: $accent-color;
     padding: 1em;
     color: $basic-white;

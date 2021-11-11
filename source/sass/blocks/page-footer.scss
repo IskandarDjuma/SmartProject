@@ -3,7 +3,7 @@
 
   &::after {
     position: absolute;
-    bottom: 30px;
+    bottom: 37px;
     content: "";
     width: 100%;
     height: 1px;
@@ -13,13 +13,17 @@
 
   @include below ($tablet-width) {
     &::before {
-      position: absolute;
-      top: 85px;
       content: "";
+      position: absolute;
+      top: 97px;
       width: 100%;
       height: 1px;
       background-color: $basic-grey100;
       opacity: 0.2;
+    }
+
+    &::after {
+      bottom: 40px;
     }
   }
 
@@ -36,16 +40,17 @@
 
 .page-footer__top {
   display: grid;
-  grid-template-columns: minmax(200px, 300px) minmax(450px, 1fr) minmax(200px, 1fr);
+  grid-template-columns: minmax(280px, 420px) minmax(500px, 1fr) minmax(400px, 1fr);
+  gap: 135px;
   width: 100%;
-  margin-bottom: 70px;
-  padding-top: 20px;
+  margin-bottom: 58px;
+  padding-top: 64px;
   overflow: hidden;
 
   @include below ($tablet-width) {
     grid-template-columns: repeat(2, 1fr);
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-top: 20px;
+    gap: 0;
 
     p {
       padding-top: 1em;
@@ -86,14 +91,20 @@
 
 .page-footer__bottom {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
+
+
+  &--agreement {
+    padding-right: 269px;
+  }
 
   p {
     @include font-size (0.81em, 1.8em, 400);
     text-transform: uppercase;
     margin: 0;
+    letter-spacing: 0.04em;
   }
 
   a {
@@ -119,10 +130,14 @@
 }
 
 .page-footer__bottom-copyright {
+  span {
+    padding-right: 67px;
+  }
+
   @include below ($tablet-width) {
     position: absolute;
-    top: 12px;
-    left: 50%;
+    top: 37px;
+    left: 58%;
     transform: translateX(-50%);
 
     span {

@@ -1,17 +1,25 @@
 .about {
   margin-bottom: 110px;
+
+  @include below ($tablet-width) {
+    margin-bottom: 83px;
+  }
+
+  @include below ($mobile-width) {
+    margin-bottom: 60px;
+  }
 }
 
 .about__wrap {
-  max-width: 1170px;
+  max-width: 1230px;
   position: relative;
-  padding-left: 180px;
+  padding-left: 209px;
 
   &::before {
     content: "";
     position: absolute;
     top: 0;
-    left: -33px;
+    left: 2px;
     width: 220px;
     height: 317px;
     background-image: url("../img/year-img@1x.png");
@@ -23,12 +31,13 @@
     @include font-size (2.25em, 1.38em, 400);
     font-family: $secondary-text;
     margin: 0;
-    margin-bottom: 0.8em;
+    padding-bottom: 23px;
   }
 
   p {
     margin: 0;
     padding-bottom: 25px;
+    line-height: 20.3px;
   }
 
   a {
@@ -42,7 +51,7 @@
     width: 180px;
     align-items: center;
     justify-content: center;
-    margin-top: 25px;
+    margin-top: 17px;
 
     &:hover {
       background-color: $accent-color;
@@ -52,17 +61,50 @@
   }
 
   @include below ($tablet-width) {
+    padding-left: 212px;
+
+    h2 {
+      @include font-size (2em, 1.38em, 400);
+      padding-bottom: 30px;
+    }
+
     &::before {
       width: 251px;
       height: 362px;
     }
+
+    .about__description {
+      padding-bottom: 1em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+
+    a {
+      margin-top: 53px;
+    }
   }
 
   @include below ($mobile-width) {
-    padding-left: 30px;
+    padding-left: 13px;
 
     &::before {
       display: none;
     }
+  }
+
+  h2 {
+    @include font-size (1.75em, 1.38em, 400);
+    padding-bottom: 22px;
+  }
+
+  p {
+    padding-left: 4px;
+  }
+
+  .about__description {
+    -webkit-line-clamp: 7;
   }
 }

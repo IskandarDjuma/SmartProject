@@ -1,16 +1,10 @@
 .form {
-  padding: 88px 0 0 100px;
-
-  @include below($tablet-width) {
-    margin: 0 auto;
-    padding: 25px 0;
-  }
+  padding: 88px 0 0 108px;
 
   h3 {
     @include font-size (2.25em, 1.64, 400);
     font-family: $secondary-text;
     margin: 0;
-    text-align: center;
     color: $basic-white;
     margin-bottom: 10px;
 
@@ -22,7 +16,29 @@
   p {
     color: $basic-white;
     margin: 0;
-    padding-bottom: 20px;
+    padding-bottom: 55px;
+  }
+
+  @include below($tablet-width) {
+    margin: 0 auto;
+    padding: 78px 0 0 66px;
+
+    h3 {
+      @include font-size (2em, 1.38em, 400);
+      padding-bottom: 20px;
+    }
+  }
+
+  @include below ($mobile-width) {
+    padding: 30px 0 0 0;
+
+    h3 {
+      @include font-size (1.75em, 1.38em, 400);
+    }
+
+    p {
+      padding-bottom: 24px;
+    }
   }
 }
 
@@ -30,7 +46,7 @@
   @include list-reset;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  gap: 44px;
 
   &--modal {
     grid-template-columns: 1fr;
@@ -50,7 +66,12 @@
 
   &--agreement {
     position: relative;
-    padding-left: 15px;
+    padding-left: 34px;
+    margin-top: -36px;
+  }
+
+  &--button {
+    margin-top: -43px;
   }
 
   input[type="checkbox"] {
@@ -58,7 +79,7 @@
     bottom: 27px;
   }
 
-  input[type="checkbox"] + label {
+  input[type="checkbox"]+label {
     @include font-size(14px, 16px, 400);
     position: relative;
     width: 40%;
@@ -76,7 +97,7 @@
     }
   }
 
-  input[type="checkbox"]:checked + label::after {
+  input[type="checkbox"]:checked+label::after {
     position: absolute;
     width: 18px;
     height: 18px;
@@ -125,6 +146,23 @@
     padding: 13px 18px;
     color: $basic-black;
     resize: none;
+  }
+
+  @include below ($tablet-width) {
+
+    &--button {
+      margin-top: -25px;
+    }
+
+    &--agreement {
+      margin-top: -18px;
+    }
+  }
+
+  @include below ($mobile-width) {
+    textarea {
+      min-height: 100px
+    }
   }
 }
 
