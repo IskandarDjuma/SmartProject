@@ -5,6 +5,10 @@
   @include below ($tablet-width) {
     padding-bottom: 103px;
   }
+
+  @include below ($mobile-width) {
+    padding-bottom: 44px;
+  }
 }
 
 .feedback__wrap {

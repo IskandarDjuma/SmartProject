@@ -3,12 +3,16 @@
 
   &::after {
     position: absolute;
-    bottom: 37px;
+    bottom: 61px;
     content: "";
     width: 100%;
     height: 1px;
     background-color: $basic-grey100;
     opacity: 0.2;
+  }
+
+  @include above ($desktop-width-max) {
+    bottom: 37px;
   }
 
   @include below ($tablet-width) {
@@ -29,7 +33,7 @@
 
   @include below ($mobile-width) {
     &::before {
-      top: 200px;
+      top: 260px;
     }
 
     &::after {
@@ -40,12 +44,17 @@
 
 .page-footer__top {
   display: grid;
-  grid-template-columns: minmax(280px, 420px) minmax(500px, 1fr) minmax(400px, 1fr);
-  gap: 135px;
+  grid-template-columns: 300px 1fr 1fr;
+  gap: 0;
   width: 100%;
   margin-bottom: 58px;
   padding-top: 64px;
   overflow: hidden;
+
+  @include above ($desktop-width-max) {
+    grid-template-columns: minmax(280px, 420px) minmax(500px, 1fr) minmax(400px, 1fr);
+    gap: 135px;
+  }
 
   @include below ($tablet-width) {
     grid-template-columns: repeat(2, 1fr);
@@ -60,6 +69,7 @@
   @include below ($mobile-width) {
     grid-template-columns: 1fr;
     margin-bottom: 20px;
+    padding-top: 47px;
   }
 }
 
@@ -93,8 +103,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-
 
   &--agreement {
     padding-right: 269px;
@@ -126,6 +134,10 @@
     p {
       margin-bottom: 20px;
     }
+
+    &--agreement {
+      padding-right: 0;
+    }
   }
 }
 
@@ -146,6 +158,7 @@
   }
 
   @include below ($mobile-width) {
-    top: 80px;
+    top: 124px;
+    left: 50%;
   }
 }

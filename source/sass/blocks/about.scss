@@ -6,7 +6,7 @@
   }
 
   @include below ($mobile-width) {
-    margin-bottom: 60px;
+    margin-bottom: 64px;
   }
 }
 
@@ -93,18 +93,18 @@
     &::before {
       display: none;
     }
-  }
 
-  h2 {
-    @include font-size (1.75em, 1.38em, 400);
-    padding-bottom: 22px;
-  }
+    h2 {
+      @include font-size (1.75em, 1.38em, 400);
+      padding-bottom: 22px;
+    }
 
-  p {
-    padding-left: 4px;
-  }
+    p {
+      padding-left: 4px;
+    }
 
-  .about__description {
-    -webkit-line-clamp: 7;
+    .about__description {
+      -webkit-line-clamp: 7;
+    }
   }
 }
