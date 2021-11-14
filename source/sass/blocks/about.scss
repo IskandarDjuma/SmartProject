@@ -25,6 +25,10 @@
     background-image: url("../img/year-img@1x.png");
     background-repeat: no-repeat;
     background-size: cover;
+
+    @include retina () {
+      background-image: url("../img/year-img@2x.png");
+    }
   }
 
   h2 {
@@ -75,11 +79,9 @@
 
     .about__description {
       padding-bottom: 1em;
-      overflow: hidden;
+      overflow: visible auto;
       text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
+      height: clamp(46px, 62px, 77px);
     }
 
     a {
@@ -101,10 +103,6 @@
 
     p {
       padding-left: 4px;
-    }
-
-    .about__description {
-      -webkit-line-clamp: 7;
     }
   }
 }

@@ -35,6 +35,10 @@
   width: 490px;
   height: 585px;
 
+  @include retina () {
+    background-image: url("../img/paper-airplane@2x.png");
+  }
+
   &::after {
     content: "";
     position: absolute;

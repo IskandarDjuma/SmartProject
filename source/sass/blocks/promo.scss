@@ -32,6 +32,9 @@
     margin: 0;
     margin-bottom: 0.3em;
     letter-spacing: 0.07em;
+    max-height: 3.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   p {
@@ -43,6 +46,9 @@
     margin-bottom: 1.95em;
     padding-left: 4.5em;
     width: 90%;
+    max-height: 3.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     &::before {
       content: "";

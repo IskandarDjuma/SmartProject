@@ -35,6 +35,7 @@
   flex-wrap: wrap;
   max-height: 110px;
   padding-left: 8px;
+  overflow: visible auto;
 
   @include below ($tablet-width) {
     max-height: none;
@@ -48,7 +49,8 @@
 
 .site-sections__item {
   padding-bottom: 6px;
-  padding-right: 20px;
+  padding-right: 15px;
+  width: 53%;
 
   &:last-child {
     padding-bottom: 0;

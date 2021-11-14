@@ -104,10 +104,6 @@
   align-items: center;
   justify-content: space-between;
 
-  &--agreement {
-    padding-right: 269px;
-  }
-
   p {
     @include font-size (0.81em, 1.8em, 400);
     text-transform: uppercase;
@@ -134,10 +130,14 @@
     p {
       margin-bottom: 20px;
     }
+  }
+}
 
-    &--agreement {
-      padding-right: 0;
-    }
+.page-footer__bottom-agreement {
+  padding-right: 269px;
+
+  @include below ($mobile-width) {
+    padding-right: 0;
   }
 }
 

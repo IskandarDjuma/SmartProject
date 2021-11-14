@@ -26,7 +26,7 @@
   }
 }
 
-.modal-close {
+.modal__close {
   position: absolute;
   top: 30px;
   right: 30px;
@@ -54,14 +54,6 @@
   &::after {
     transform: rotate(-45deg);
   }
-}
-
-.modal__overlay {
-  background-color: $accent-color;
-  top: 120px;
-  bottom: auto;
-  max-width: 490px;
-  padding: 35px 40px;
 }
 
 .modal__show {
