@@ -69,23 +69,28 @@
 
     h2 {
       @include font-size (2em, 1.38em, 400);
-      padding-bottom: 30px;
+      padding-bottom: 26px;
     }
 
     &::before {
       width: 251px;
       height: 362px;
+      left: -7px;
+    }
+
+    p {
+      line-height: 20.8px;
     }
 
     .about__description {
       padding-bottom: 1em;
       overflow: visible auto;
       text-overflow: ellipsis;
-      height: clamp(46px, 62px, 77px);
+      height: clamp(61px, 83px, 88px);
     }
 
     a {
-      margin-top: 53px;
+      margin-top: 45px;
     }
   }
 

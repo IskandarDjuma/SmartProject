@@ -79,27 +79,30 @@
 
     p::before {
       width: 33px;
+      top: 17px;
+      left: 3px;
     }
   }
 
   @include below ($mobile-width) {
     order: 2;
     padding-left: 0;
-    margin-top: 109px;
+    margin-top: 107px;
 
     h2 {
       @include font-size (2.5em, 1.16em, 700);
     }
 
     p {
-      @include font-size (1em, 1.6em, 700);
+      @include font-size (1em, 25px, 700);
       padding: 0;
-      padding-left: 51px;
-      padding-top: 10px;
+      padding-left: 50px;
+      padding-top: 6px;
+      max-height: 5.5em;
     }
 
     p::before {
-      top: 24px;
+      top: 20px;
     }
   }
 }
@@ -122,6 +125,7 @@
 
   @include below ($tablet-width) {
     margin-left: 3em;
+    max-width: 382px;
   }
 
   @include below ($mobile-width) {

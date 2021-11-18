@@ -1,6 +1,6 @@
 .feedback {
   background-color: $accent-color;
-  padding-bottom: 86px;
+  padding-bottom: 53px;
 
   @include below ($tablet-width) {
     padding-bottom: 103px;
@@ -12,7 +12,7 @@
 }
 
 .feedback__wrap {
-  max-width: 1230px;
+  max-width: 1300px;
   display: grid;
   grid-template-columns: 5fr 7fr;
 
@@ -32,8 +32,8 @@
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: contain;
-  width: 490px;
-  height: 585px;
+  width: 529px;
+  height: 618px;
 
   @include retina () {
     background-image: url("../img/paper-airplane@2x.png");
@@ -43,7 +43,7 @@
     content: "";
     position: absolute;
     top: -60px;
-    left: -234px;
+    left: -197px;
     width: 670px;
     height: 641px;
     background-image: url("../img/triangles.svg");

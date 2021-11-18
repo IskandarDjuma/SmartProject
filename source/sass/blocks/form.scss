@@ -1,12 +1,12 @@
 .form {
-  padding: 88px 0 0 108px;
+  padding: 88px 34px 0 104px;
 
   h3 {
     @include font-size (2.25em, 1.64, 400);
     font-family: $secondary-text;
     margin: 0;
     color: $basic-white;
-    margin-bottom: 10px;
+    margin-bottom: 7px;
 
     @include below($tablet-width) {
       margin: 0;
@@ -21,11 +21,15 @@
 
   @include below($tablet-width) {
     margin: 0 auto;
-    padding: 78px 0 0 66px;
+    padding: 78px 0 0 65px;
 
     h3 {
       @include font-size (2em, 1.38em, 400);
       padding-bottom: 20px;
+    }
+
+    p {
+      padding-left: 2px;
     }
   }
 
@@ -46,10 +50,14 @@
   @include list-reset;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 44px;
+  gap: 46px 24px;
 
   &--modal {
     grid-template-columns: 1fr;
+  }
+
+  @include below($tablet-width) {
+    gap: 49px 36px;
   }
 
   @include below($mobile-width) {
@@ -67,7 +75,7 @@
 
   &--agreement {
     position: relative;
-    padding-left: 34px;
+    padding-left: 45px;
     margin-top: -36px;
   }
 
@@ -155,7 +163,17 @@
     }
 
     &--agreement {
-      margin-top: -18px;
+      margin-top: -19px;
+      padding-left: 40px;
+    }
+
+    textarea {
+      margin-bottom: 22px;
+    }
+
+    input[type="text"],
+    input[type="tel"] {
+      padding: 17px;
     }
   }
 

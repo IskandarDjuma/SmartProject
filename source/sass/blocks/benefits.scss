@@ -90,6 +90,10 @@
       padding-top: 3px;
       padding-bottom: 11px;
     }
+
+    p {
+      line-height: 21.6px;
+    }
   }
 
   @include below ($mobile-width) {
